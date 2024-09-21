@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="654.0" style="-fx-background-color: #854798;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example._pill_20102669_datastruc.PillController">
+    <children>
+        <HBox alignment="CENTER" spacing="10" style="-fx-background-color: #455A64;" VBox.vgrow="NEVER">
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="485.0" prefWidth="608.0" spacing="20" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="590.0" prefWidth="494.0" spacing="10" style="-fx-background-color: #D0A5C0; -fx-padding: 10; -fx-background-radius: 5;">
+                <children>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                    <Label style="-fx-text-fill: #263238; -fx-font-weight: bold;" text="Normal Image">
+                  <font>
+                     <Font size="14.0" />
+                  </font></Label>
+               <Pane prefHeight="158.0" prefWidth="359.0">
+                  <children>
+                     <Pane fx:id="origPane" layoutX="80.0" layoutY="-25.0" prefHeight="178.0" prefWidth="200.0">
+                        <children>
+                           <ImageView fx:id="normalImageView" fitHeight="178.0" fitWidth="200.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                        </children>
+                     </Pane>
+                  </children></Pane>
+               <Pane prefHeight="200.0" prefWidth="200.0">
+                  <children>
+                           <ImageView fx:id="bAndWImageView" fitHeight="200.0" fitWidth="200.0" layoutX="70.0" onMouseClicked="#onImageClick" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </Pane>
+                    <Label style="-fx-text-fill: #263238; -fx-font-weight: bold;" text="Black and White Conversion">
+                  <font>
+                     <Font size="14.0" />
+                  </font></Label>
+                </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="10" />
+            <VBox alignment="CENTER" prefHeight="459.0" prefWidth="296.0" spacing="10" style="-fx-background-color: #D0A5C0; -fx-padding: 10; -fx-background-radius: 5;">
+                <children>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pill And Capsule Analyser">
+                  <font>
+                     <Font name="Forte" size="18.0" />
+                  </font>
+               </Text>
+                    <Label fx:id="thresholdLabel" text="Threshold: 50" />
+                    <Slider fx:id="thresholdSlider" majorTickUnit="10" max="100" min="0" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="50">
+                  <effect>
+                     <InnerShadow>
+                        <color>
+                           <Color red="0.800000011920929" green="0.11999999731779099" blue="0.5005583763122559" />
+                        </color>
+                     </InnerShadow>
+                  </effect></Slider>
+                    <VBox fx:id="infoDisplayArea" spacing="5">
+                        <children>
+                            <TextArea fx:id="rectInfoDisplay" editable="false" prefHeight="100.0" prefWidth="300.0" wrapText="true" />
+                        </children>
+                    </VBox>
+                   <Button onAction="#openFile" style="-fx-background-color: #F6C0D0;" text="Open" />
+                   <Button onAction="#colorDisjointSets" style="-fx-background-color: #F6C0D0;" text="Color" textFill="#0d0d0d" />
+                   <Button onAction="#ResetToOriginal" style="-fx-background-color: #F6C0D0;" text="Reset" />
+                   <Button onAction="#handleClose" style="-fx-background-color: #F6C0D0;" text="Close" />
+                </children>
+            </VBox>
+        </HBox>
+    </children>
+</VBox>
